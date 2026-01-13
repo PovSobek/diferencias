@@ -37,7 +37,7 @@ class CostmapChangeDetector(Node):
 
         # --- PARÁMETROS DE AJUSTE ---
         self.tolerance_dist = 1.5       # Metros (tolerancia espacial)
-        self.min_hits_to_publish = 5   # Persistencia: Debe detectarse 15 frames seguidos
+        self.min_hits_to_publish = 3    # Persistencia: Debe detectarse 3 frames seguidos
         self.candidate_group_dist = 0.2 # Agrupar candidatos cercanos (20cm)
         
         # Lista de posibles cambios que estamos evaluando
