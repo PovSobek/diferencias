@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<mvsim_world>
+  <gui>
+    <ortho>false</ortho>
+    <show_forces>false</show_forces>
+  </gui>
+
+  <element class="ground_grid">
+    <interval>2.0</interval>
+  </element>
+
+  <include file="$(ros2 pkg prefix mvsim)/share/mvsim/definitions/small_robot.vehicle.xml"/>
+  <vehicle name="robot1" class="small_robot">
+    <init_pose>-8 -8 0</init_pose>
+    <init_vel>0 0 0</init_vel>
+    
+    <include file="$(ros2 pkg prefix mvsim)/share/mvsim/definitions/rgbd_camera.sensor.xml"
+             sensor_x="0.65" sensor_y="0" sensor_z="0.5" sensor_period_sec="0.10"/>
+    <include file="$(ros2 pkg prefix mvsim)/share/mvsim/definitions/lidar2d.sensor.xml"
+             sensor_x="0.65" sensor_y="0" sensor_z="0.30" sensor_yaw="0" sensor_name="scan" raytrace_3d="true"
+             sensor_period_sec="0.10" viz_visibleLines="false" sensor_nrays="300" fov_degrees="180"/>
+  </vehicle>
+
+  <block:class name="trash-can">
+    <static>true</static>
+    <color>#202020</color>
+    <shape_from_visual/>
+    <visual>
+      <model_uri>https://mrpt.github.io/mvsim-models/trash-can-01.zip/trash-can-01/trash_can_01.dae</model_uri>
+      <model_roll>90</model_roll>
+    </visual>
+  </block:class>
+
+  <block:class name="column">
+    <static>true</static>
+    <color>#CCCCCC</color>
+    <visual><cylinder radius="0.5" length="4.0" /></visual>
+    <shape>
+       <pt>0.5 0.0</pt> <pt>0.35 0.35</pt> <pt>0.0 0.5</pt> <pt>-0.35 0.35</pt>
+       <pt>-0.5 0.0</pt> <pt>-0.35 -0.35</pt> <pt>0.0 -0.5</pt> <pt>0.35 -0.35</pt>
+    </shape>
+  </block:class>
+
+  <block:class name="barrier">
+    <static>true</static>
+    <color>#B22222</color>
+    <visual><box size_x="2.5" size_y="0.4" size_z="1.0" /></visual>
+    <shape>
+       <pt>-1.25 -0.2</pt> <pt> 1.25 -0.2</pt> <pt> 1.25  0.2</pt> <pt>-1.25  0.2</pt>
+    </shape>
+  </block:class>
+
+  <block:class name="cone">
+        <static>true</static> 
+    <color>#0080ff</color>
+        <shape_from_visual/> 
+        <visual>
+            <model_uri>https://mrpt.github.io/mvsim-models/ConstructionCone.zip/ConstructionCone/construction_cone.dae</model_uri>
+      <model_roll>90</model_roll>
+      <model_scale>5.0</model_scale>
+    </visual>
+  </block:class>
+
+  <block:class name="wooden_box">
+    <static>true</static>
+    <color>#8B4513</color> <visual>
+        <box size_x="1.2" size_y="1.2" size_z="1.2" />
+    </visual>
+    <shape>
+       <pt>-0.6 -0.6</pt> <pt> 0.6 -0.6</pt>
+       <pt> 0.6  0.6</pt> <pt>-0.6  0.6</pt>
+    </shape>
+  </block:class>
+
+  <block name="wooden_box_1" class="wooden_box"><init_pose> 5  5  15</init_pose></block>
+  <block name="wooden_box_2" class="wooden_box"><init_pose>-6  6  45</init_pose></block> <block name="wooden_box_4" class="wooden_box"><init_pose>-5 -5   0</init_pose></block> <block name="barrier_1" class="barrier"><init_pose> 0  7  120</init_pose></block> <block name="barrier_4" class="barrier"><init_pose> -5 5   -15</init_pose></block>
+
+  <block name="column_1" class="column"><init_pose> 6  6  0</init_pose></block> <block name="column_4" class="column"><init_pose> 5 -5 0</init_pose></block>
+
+  <block name="trash_can_1" class="trash-can"><init_pose>-2 2 0</init_pose></block>
+  <block name="trash_can_3" class="trash-can"><init_pose>-7 -4 0</init_pose></block> <block name="cone_1" class="cone"><init_pose> 1  1  0</init_pose></block>
+  <block name="cone_2" class="cone"><init_pose> 1.5 0.5 0</init_pose></block>
+  <block name="cone_3" class="cone"><init_pose>-6  7  0</init_pose></block>
+
+  <element name="wall_north" class="vertical_plane">
+      <x0>10</x0> <y0>10</y0> <x1>-10</x1> <y1>10</y1>
+      <z>0.0</z> <height>3.0</height> <color>#505050</color>
+  </element>
+  <element name="wall_south" class="vertical_plane">
+      <x0>10</x0> <y0>-10</y0> <x1>-10</x1> <y1>-10</y1>
+      <z>0.0</z> <height>3.0</height> <color>#505050</color>
+  </element>
+  <element name="wall_east" class="vertical_plane">
+      <x0>10</x0> <y0>10</y0> <x1>10</x1> <y1>-10</y1>
+      <z>0.0</z> <height>3.0</height> <color>#505050</color>
+  </element>
+  <element name="wall_west" class="vertical_plane">
+      <x0>-10</x0> <y0>10</y0> <x1>-10</x1> <y1>-10</y1>
+      <z>0.0</z> <height>3.0</height> <color>#505050</color>
+  </element>
+
+</mvsim_world>
