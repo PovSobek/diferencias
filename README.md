@@ -1,6 +1,6 @@
 # Diferencias
 
-## Para poder probar la detección de diferencias 2D, hay que lanzar las siguientes comandos en terminales diferentes:
+### Para poder probar la detección de diferencias 2D, hay que lanzar las siguientes comandos en terminales diferentes:
 
 $ python3 maquina_estados.py #La máquina se lanza y se queda en estado de espera hasta que se pulsa enter en dicho terminal.
 
