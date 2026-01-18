@@ -11,7 +11,7 @@ $ ros2 launch nav2_bringup bringup_launch.py map:=./world/mapa.yaml *#Lanza el n
 $ python3 marker.py *#Lanza el nodo para la detección de diferencias.*
 
 *#Volver al terminal de maquina_estados.py y pulsar enter para empezar la navegación.*
-
+-----------------------------------------------------------------------------------------------------------
 
 ### Para poder probar la detección de diferencias 3D:
 
