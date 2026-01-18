@@ -27,8 +27,10 @@ $ python3 Nodo_nube3D.py *#Lanza el nodo para realizar un mapa de nubes de punto
 $ ros2 launch nav2_bringup bringup_launch.py map:=./world/mapa.yaml *#Lanza el nodo para la navegación en el mapa generado. Se debe marcar la posición inicial del robot en el mapa de rviz.*
 
 
-*#Volver al terminal de maquina_estados.py y pulsar enter para empezar la navegación.
-#Una vez terminada la navegación se presiona Ctrl+C para terminar todas las ejecuciones, guardando el mapa de nubes de puntos en un archivo .pcd.
-#Se asignan los nombres en el archivo Nodo_comparar_nubes.py de las nubes de puntos.*
+*#Volver al terminal de maquina_estados.py y pulsar enter para empezar la navegación.*
+
+*#Una vez terminada la navegación se presiona Ctrl+C para terminar todas las ejecuciones, guardando el mapa de nubes de puntos en un archivo .pcd.*
+
+*#Se asignan los nombres en el archivo Nodo_comparar_nubes.py de las nubes de puntos.*
 
 $ python3 Nodo_ comparar_nubes.py *#Lanza el nodo para realizar una imagen con la comparación de los dos mapas de nubes de puntos, mostrando las diferencias.*
